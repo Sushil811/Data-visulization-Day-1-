@@ -1,0 +1,129 @@
+<html>
+    <title>Registration Form</title>
+    <head>
+        <style>
+            * {
+                box-sizing: border-box;
+                text-align:center;
+                font-size:18px;
+                padding: 0px;
+              }
+            .heading{
+                text-align:center;
+            }
+            .container{
+                height:100%;
+                width:50%;
+                margin:auto;
+                border-radius:5px;
+                text-align:center;
+                justify-content:center;
+                padding: 10px;
+                background-color:LightGray;
+            }
+
+            input[type=text], input[type=date],input[type=range],input[type=password],input[type=submit] {
+                width:100%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                display: inline-block;
+                border: none;
+                background: #f1f1f1;
+              }
+              .a{
+                font-size:20px;
+
+              }
+              .heading{
+                font-size:30px;
+              }
+        </style>
+        <script language="javascript" type="text/javascript">
+            function ValidateForm() {
+    
+                var User = document.getElementById("username").value;
+                var email = document.getElementById("email").value;
+                var dob= document.getElementById("dob").select();
+                var Pass = document.getElementById("password").value;
+
+                
+                
+    
+                //condition 1
+                if (User == "" && email== ""  && Pass== "")
+                {
+                    alert("Please Fill the details");
+                    document.getElementById("username").focus();
+                    return false;
+                }
+                else if (User == "") {
+                    alert("Please enter UserName");
+                    document.getElementById("username").focus();
+                    return false;
+                }
+
+                else if (dob == "") {
+                    alert("Please Select DOB");
+                    document.getElementById("dob").focus();
+                    return false;
+                }
+                
+                else if (email == "") {
+                    alert("Please enter Email");
+                    document.getElementById("email").focus();
+                    return false;
+                }
+                else if (Pass == "") {
+                    alert("Please enter Password");
+                    document.getElementById("password").focus();
+                    return false;
+                }
+
+                return true;
+                
+            }
+    
+    
+    
+    
+        </script>
+    </head>
+    <body>
+        <form name="reg_form" onsubmit="return validate()">
+            
+            <h1 class="heading">Registration Form</h1>
+            <div class="container">
+                <div class="username">
+                    <label for="username" class="a">User name</label>
+                    <input type="text" id="username" class="form-input" placeholder="Enter your username"  />
+                </div>
+
+                <div class="dob">
+                    <label for="dob" class="a">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob">
+                </div>
+                
+                <div class="Age">
+                    <label for="Age" class="a">Age:</label>
+                    <input type="range" id="age" name="age" min="18" max="50">
+                    
+                </div>
+                <div class="Email">
+                    <label for="email" class="a">Email:</label>
+                    <input type="text" id="email" class="form-input" placeholder="Email@gmail.com"  />
+                </div>
+                <div class="Password">
+                    <label for="password" class="a">Password:</label>
+                    <input type="password" id="password" class="form-input" placeholder="Enter your password"  />
+                    
+                </div>
+                <p>
+                    <input style="color:white;background-color:gray;" type="submit" value="Submit" name="Submit" OnClick="return ValidateForm();" />    
+                </p>
+                
+            </div>
+
+        </form>
+    </body>
+
+    </html>
